@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/authFragment">
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.anotaai.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" >
+        <action
+            android:id="@+id/action_authFragment_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_authFragment_to_shopFragment"
+            app:destination="@id/shopFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemsDetailFragment"
+        android:name="com.example.anotaai.ItemsDetailFragment"
+        android:label="fragment_items_detail"
+        tools:layout="@layout/fragment_items_detail" />
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.anotaai.Login"
+        android:label="fragment_phone"
+        tools:layout="@layout/fragment_phone" >
+        <action
+            android:id="@+id/action_login_to_shopFragment"
+            app:destination="@id/shopFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.example.anotaai.ShopFragment"
+        android:label="fragment_shop"
+        tools:layout="@layout/fragment_shop" >
+        <action
+            android:id="@+id/action_shopFragment_to_shopItemFragment"
+            app:destination="@id/shopItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shopItemFragment"
+        android:name="com.example.anotaai.ShopItemFragment"
+        android:label="fragment_shop_item"
+        tools:layout="@layout/fragment_shop_item" >
+        <action
+            android:id="@+id/action_shopItemFragment_to_itemsDetailFragment"
+            app:destination="@id/itemsDetailFragment" />
+    </fragment>
+</navigation>
