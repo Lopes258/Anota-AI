@@ -9,7 +9,9 @@ import com.example.anotaai.shop.model.ShopModel
 class ShopViewModel: ViewModel() {
 
     fun obterLista() = liveData(Dispatchers.IO){
-        emit(mutableListOf<ShopModel>())
+        emit(mutableListOf<ShopModel>(
+            ShopModel(1, "Arroz")
+        ))
     }
 
     class ShopViewModelFactory(): ViewModelProvider.Factory {
